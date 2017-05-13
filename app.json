@@ -1,0 +1,1 @@
+{"name":"WhichVino Two","repository":"https://github.com/maryscarpulla/whichvino_two","env":{"CLOUDINARY_CLOUD_NAME":{"required":true},"CLOUDINARY_API_KEY":{"required":true},"CLOUDINARY_API_SECRET":{"required":true},"ROLLBAR_ACCESS_TOKEN":{"required":true}}}
