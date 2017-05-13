@@ -51,6 +51,31 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_my_wine" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for wine_id -->
+      <input type="hidden" name="wine_id" value="<%= @wine.id %>">
+
+      <!-- Label and input for bucket_list -->
+      <div class="checkbox">
+        <label for="bucket_list">
+          <input type="checkbox" id="bucket_list" name="bucket_list" value="1" <%= "checked" if @my_wine.bucket_list %>>
+          Bucket list
+        </label>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create My Wine
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
