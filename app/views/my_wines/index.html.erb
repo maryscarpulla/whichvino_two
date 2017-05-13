@@ -17,7 +17,7 @@
 
       <% @my_wines.each do |my_wine| %>
       <tr>
-        <td><%= my_wine.user_id %></td>
+        <td><%= my_wine.user.email %></td>
         <td><%= my_wine.wine_id %></td>
         <td><%= my_wine.bucket_list %></td>
         <td>
