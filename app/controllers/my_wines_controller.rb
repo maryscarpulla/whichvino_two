@@ -10,7 +10,8 @@ class MyWinesController < ApplicationController
   end
 
   def index
-    @my_wines = MyWine.page(params[:page]).per(10)
+    @q = MyWine.ransack(params[:q])
+    @my_wines = @q.result(:distinct => true).includes(:user, :wine).page(params[:page]).per(10)
 
     render("my_wines/index.html.erb")
   end
