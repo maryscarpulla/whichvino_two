@@ -27,6 +27,42 @@
         <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @wine.name %>">
       </div>
 
+      <!-- Label and input for year -->
+      <div class="form-group">
+        <label for="year" class="control-label">
+          Year
+        </label>
+
+        <input type="text" id="year" name="year" placeholder="Year" class="form-control" value="<%= @wine.year %>">
+      </div>
+
+      <!-- Label and input for price -->
+      <div class="form-group">
+        <label for="price" class="control-label">
+          Price
+        </label>
+
+        <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @wine.price %>">
+      </div>
+
+      <!-- Label and input for varietal_id -->
+      <div class="form-group">
+        <label for="varietal_id" class="control-label">
+          Varietal
+        </label>
+
+        <input type="text" id="varietal_id" name="varietal_id" placeholder="Varietal" class="form-control" value="<%= @wine.varietal_id %>">
+      </div>
+
+      <!-- Label and input for winery -->
+      <div class="form-group">
+        <label for="winery" class="control-label">
+          Winery
+        </label>
+
+        <input type="text" id="winery" name="winery" placeholder="Winery" class="form-control" value="<%= @wine.winery %>">
+      </div>
+
       <button class="btn btn-warning">
         Update Wine
       </button>

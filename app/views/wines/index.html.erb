@@ -14,6 +14,33 @@
   </div>
 
 <div class="form-group">
+    <%= f.label :winery_cont, "Winery contains" %>
+    <%= f.text_field :winery_cont, :class => "form-control", :placeholder => "Winery contains" %>
+  </div>
+
+<div class="form-group">
+  <%= f.label :varietal_id, "Varietal" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :varietal_id_gteq, :class => "form-control", :placeholder => "Varietal greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :varietal_id_lteq, :class => "form-control", :placeholder => "Varietal less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+    <%= f.label :price_cont, "Price contains" %>
+    <%= f.text_field :price_cont, :class => "form-control", :placeholder => "Price contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :year_cont, "Year contains" %>
+    <%= f.text_field :year_cont, :class => "form-control", :placeholder => "Year contains" %>
+  </div>
+
+<div class="form-group">
           <%= f.label :created_at, "Created at" %>
           <div class="row">
             <div class='col-md-6 mb-1'>
@@ -70,12 +97,20 @@
     <table class="table table-striped table-hover">
       <tr>
         <th>Name</th>
+        <th>Year</th>
+        <th>Price</th>
+        <th>Varietal</th>
+        <th>Winery</th>
         <th>Actions</th>
       </tr>
 
       <% @wines.each do |wine| %>
       <tr>
         <td><%= wine.name %></td>
+        <td><%= wine.year %></td>
+        <td><%= wine.price %></td>
+        <td><%= wine.varietal_id %></td>
+        <td><%= wine.winery %></td>
         <td>
           <a href="/wines/<%= wine.id %>" class="btn btn-primary">Show</a>
           <a href="/wines/<%= wine.id %>/edit" class="btn btn-warning">Edit</a>

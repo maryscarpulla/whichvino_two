@@ -23,6 +23,10 @@ class WinesController < ApplicationController
     @wine = Wine.new
 
     @wine.name = params[:name]
+    @wine.year = params[:year]
+    @wine.price = params[:price]
+    @wine.varietal_id = params[:varietal_id]
+    @wine.winery = params[:winery]
 
     save_status = @wine.save
 
@@ -50,6 +54,10 @@ class WinesController < ApplicationController
     @wine = Wine.find(params[:id])
 
     @wine.name = params[:name]
+    @wine.year = params[:year]
+    @wine.price = params[:price]
+    @wine.varietal_id = params[:varietal_id]
+    @wine.winery = params[:winery]
 
     save_status = @wine.save
 
