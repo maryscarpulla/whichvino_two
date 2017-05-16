@@ -259,6 +259,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   activerecord-import
+  bcrypt
   bootstrap3-datetimepicker-rails (~> 4.17.43)
   bootstrap4-kaminari-views
   byebug
