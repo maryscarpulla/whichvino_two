@@ -26,17 +26,16 @@ class MyWinesController < ApplicationController
   def new
     @my_wine = MyWine.new
     @wine = Wine.new
-    
+
     render("my_wines/new.html.erb")
   end
 
   def create
     @my_wine = MyWine.new
-
     @my_wine.user_id = params[:user_id]
     @my_wine.wine_id = params[:wine_id]
     @my_wine.bucket_list = params[:bucket_list]
-
+    @my_wine.name = params[:name]
     save_status = @my_wine.save
 
     if save_status == true
@@ -55,6 +54,10 @@ class MyWinesController < ApplicationController
 
   def edit
     @my_wine = MyWine.find(params[:id])
+    @my_wine.user_id = params[:user_id]
+    @my_wine.wine_id = params[:wine_id]
+
+
 
     render("my_wines/edit.html.erb")
   end

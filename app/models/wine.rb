@@ -1,7 +1,7 @@
 class Wine < ApplicationRecord
   # Direct associations
 
-  has_many   :my_wines,
+  has_many   :my_wines, :class_name => "MyWine", :foreign_key => "wine_id",
   :dependent => :destroy
 
   has_many :bucket_list_wines, :class_name => "BucketListWine", :foreign_key=> "wine_id"
