@@ -5,6 +5,7 @@ class MyWine < ApplicationRecord
 
   belongs_to :user
 
+
   # Indirect associations
 
   # Validations

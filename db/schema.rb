@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170513210515) do
+ActiveRecord::Schema.define(version: 20170523162913) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 20170513210515) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "bucket_list_wines", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "wine_id"
+    t.string   "bucket_wine_name"
+    t.string   "string"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "my_wines", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "wine_id"
@@ -69,6 +78,12 @@ ActiveRecord::Schema.define(version: 20170513210515) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "varietals", force: :cascade do |t|
+    t.string   "varietal_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "wines", force: :cascade do |t|

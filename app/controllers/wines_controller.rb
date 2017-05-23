@@ -15,7 +15,7 @@ class WinesController < ApplicationController
 
   def new
     @wine = Wine.new
-
+    @varietal = Varietal.new
     render("wines/new.html.erb")
   end
 

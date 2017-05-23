@@ -1,5 +1,5 @@
 class MyWinesController < ApplicationController
-  before_action :current_user_must_be_my_wine_user, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_my_wine_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_my_wine_user
     my_wine = MyWine.find(params[:id])
@@ -17,7 +17,7 @@ class MyWinesController < ApplicationController
   end
 
   def show
-    @my_wine = MyWine.find(params[:id])
+      @my_wine = MyWine.find(params[:id])
 
     render("my_wines/show.html.erb")
   end

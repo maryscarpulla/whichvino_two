@@ -28,6 +28,7 @@
         </label>
 
         <%= select_tag(:wine_id, options_from_collection_for_select(Wine.all, :id, :name, @my_wine.wine_id), :class => "form-control") %>
+
       </div>
 
       <!-- Label and input for bucket_list -->
