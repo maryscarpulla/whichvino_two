@@ -24,13 +24,13 @@ class WineSearchController < ApplicationController
     @winery1 = parsed_data["wines"][0]["winery"]
     @varietal1 = parsed_data["wines"][0]["varietal"]
     @year1 = parsed_data["wines"][0]["vintage"]
-    @image1 = parsed_data["wines"][0]["iamge"]
+    @image1 = parsed_data["wines"][0]["image"]
 
     @winename2 = parsed_data["wines"][1]["name"]
     @winery2 = parsed_data["wines"][1]["winery"]
     @varietal2 = parsed_data["wines"][1]["varietal"]
     @year2 = parsed_data["wines"][1]["vintage"]
-    @image2 = parsed_data["wines"][1]["iamge"]
+    @image2 = parsed_data["wines"][1]["image"]
 
     render("wine_search_results.html.erb")
 
