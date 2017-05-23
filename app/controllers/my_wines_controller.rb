@@ -17,14 +17,16 @@ class MyWinesController < ApplicationController
   end
 
   def show
-      @my_wine = MyWine.find(params[:id])
+    @my_wine = MyWine.find(params[:id])
 
+    @wine = Wine.new
     render("my_wines/show.html.erb")
   end
 
   def new
     @my_wine = MyWine.new
-
+    @wine = Wine.new
+    
     render("my_wines/new.html.erb")
   end
 
