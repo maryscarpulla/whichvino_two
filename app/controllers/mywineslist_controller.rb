@@ -1,6 +1,6 @@
 class MywineslistController < ApplicationController
 
-  before_action :current_user_must_be_my_wines_list_user, :only => [:show, :edit, :update, :destroy]
+  # before_action :current_user_must_be_my_wines_list_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_my_wines_list_user
     mywineslist = Mywineslist.find(params[:id])

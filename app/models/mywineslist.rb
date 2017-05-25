@@ -8,7 +8,7 @@ class Mywineslist < ApplicationRecord
 
   # Validations
   #Wine Name Can't be blank; must be unique in combination with year
-  validates :name, :presence => true, :uniqueness => { :scope => :year}
+  validates :winename, :presence => true, :uniqueness => { :scope => :year}
 
   #Year can't be blank
   validates :year, :presence => true
