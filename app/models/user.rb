@@ -1,10 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
-  has_many   :my_wines,
+  has_many   :mywineslist,
   :dependent => :nullify
 
-  
 
 
   has_many :bucket_list_wines, :class_name => "BucketListWine", :foreign_key=> "user_id", :dependent => :nullify
