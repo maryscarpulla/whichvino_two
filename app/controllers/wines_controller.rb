@@ -1,13 +1,22 @@
-class WinesController < ApplicationController
+class MyWinesController < ApplicationController
+  before_action :current_user_must_be_my_wine_user, :only => [:show, :edit, :update, :destroy]
+
+  def current_user_must_be_my_wine_user
+    my_wine = MyWine.find(params[:id])
+    unless current_user == my_wine.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @q = Wine.ransack(params[:q])
-    @wines = @q.result(:distinct => true).includes(:my_wines).page(params[:page]).per(10)
+    @wines = @q.result(:distinct => true).includes(:user,:wine).page(params[:page]).per(10)
 
     render("wines/index.html.erb")
   end
 
   def show
-    @my_wine = MyWine.new
+    @wine = Wine.new
     @wine = Wine.find(params[:id])
 
     render("wines/show.html.erb")

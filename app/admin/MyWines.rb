@@ -1,6 +1,6 @@
-ActiveAdmin.register MyWine do
+ActiveAdmin.register Mywineslist do
 
- permit_params :user_id, :wine_id, :bucket_list
+ permit_params :winename, :year, :price, :varietal, :winery, :bucketlist,:image_id
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

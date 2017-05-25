@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Mywineslist resource:
+  # CREATE
+  get "/mywineslist/new", :controller => "mywineslist", :action => "new"
+  post "/create_mywineslist", :controller => "mywineslist", :action => "create"
+
+  # READ
+  get "/mywineslist", :controller => "mywineslist", :action => "index"
+  get "/mywineslist/:id", :controller => "mywineslist", :action => "show"
+
+  # UPDATE
+  get "/mywineslist/:id/edit", :controller => "mywineslist", :action => "edit"
+  post "/update_mywineslist/:id", :controller => "mywineslist", :action => "update"
+
+  # DELETE
+  get "/delete_mywineslist/:id", :controller => "mywineslist", :action => "destroy"
+  #------------------------------
+
   # Routes for the Bucket_list_wine resource:
   # CREATE
   get "/bucket_list_wines/new", :controller => "bucket_list_wines", :action => "new"

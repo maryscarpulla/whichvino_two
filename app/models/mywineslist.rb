@@ -1,0 +1,2 @@
+class Mywineslist < ApplicationRecord
+end

@@ -1,0 +1,90 @@
+<!-- Validation failure messages -->
+<% if @mywineslist.errors.any? %>
+  <% @mywineslist.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Mywineslist #<%= @mywineslist.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_mywineslist/<%= @mywineslist.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for winename -->
+      <div class="form-group">
+        <label for="winename" class="control-label">
+          Winename
+        </label>
+
+        <input type="text" id="winename" name="winename" placeholder="Winename" class="form-control" value="<%= @mywineslist.winename %>">
+      </div>
+
+      <!-- Label and input for year -->
+      <div class="form-group">
+        <label for="year" class="control-label">
+          Year
+        </label>
+
+        <input type="text" id="year" name="year" placeholder="Year" class="form-control" value="<%= @mywineslist.year %>">
+      </div>
+
+      <!-- Label and input for price -->
+      <div class="form-group">
+        <label for="price" class="control-label">
+          Price
+        </label>
+
+        <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @mywineslist.price %>">
+      </div>
+
+      <!-- Label and input for varietal -->
+      <div class="form-group">
+        <label for="varietal" class="control-label">
+          Varietal
+        </label>
+
+        <input type="text" id="varietal" name="varietal" placeholder="Varietal" class="form-control" value="<%= @mywineslist.varietal %>">
+      </div>
+
+      <!-- Label and input for winery -->
+      <div class="form-group">
+        <label for="winery" class="control-label">
+          Winery
+        </label>
+
+        <input type="text" id="winery" name="winery" placeholder="Winery" class="form-control" value="<%= @mywineslist.winery %>">
+      </div>
+
+      <!-- Label and input for bucketlist -->
+      <div class="checkbox">
+        <label for="bucketlist">
+          <input type="checkbox" id="bucketlist" name="bucketlist" value="1" <%= "checked" if @mywineslist.bucketlist %>>
+          Bucketlist
+        </label>
+      </div>
+
+      <!-- Label and input for image_id -->
+      <div class="form-group">
+        <label for="image_id" class="control-label">
+          Image
+        </label>
+
+        <input type="text" id="image_id" name="image_id" placeholder="Image" class="form-control" value="<%= @mywineslist.image_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Mywineslist
+      </button>
+      or
+      <a href="/mywineslist/<%= @mywineslist.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

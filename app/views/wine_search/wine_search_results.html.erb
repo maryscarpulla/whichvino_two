@@ -9,6 +9,8 @@
         <th>Year</th>
         <th>Winery</th>
         <th>Varietal</th>
+        <th>Price</th>
+        <th>Type</th>
       </tr>
 
       <% @wines_from_api.each do |wine_hash| %>
@@ -19,7 +21,9 @@
         <td> <%= wine_hash["vintage"] %></td>
         <td> <%= wine_hash["winery"] %></td>
         <td> <%= wine_hash["varietal"] %></td>
-        <td><a href="/my_wines/new" class="btn btn-primary">Add</a></td>
+        <td> <%= wine_hash["price"] %></td>
+        <td> <%= wine_hash["type"] %></td>
+        <td><a href="/my_wines/ new" class="btn btn-primary">Add</a></td>
       </td>
     </tr>
     <% end %>
