@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525013315) do
+ActiveRecord::Schema.define(version: 20170525211747) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -60,7 +60,18 @@ ActiveRecord::Schema.define(version: 20170525013315) do
     t.datetime "updated_at"
   end
 
-  create_table "mywineslist", force: :cascade do |t|
+  create_table "mycellarwines", force: :cascade do |t|
+    t.string   "wine_name"
+    t.string   "year"
+    t.integer  "price"
+    t.integer  "varietal_id"
+    t.string   "winery"
+    t.boolean  "bucket_list_wine"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mywineslists", force: :cascade do |t|
     t.string   "winename"
     t.string   "year"
     t.string   "price"
@@ -68,6 +79,12 @@ ActiveRecord::Schema.define(version: 20170525013315) do
     t.string   "winery"
     t.boolean  "bucketlist"
     t.integer  "image_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasting_note_tags", force: :cascade do |t|
+    t.string   "tasting_note_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -28,30 +28,33 @@
 
             <td>
               <input type="text" id="winery" name="winery" placeholder="Winery" class="form-control" value="<%= wine_hash["winery"] %>"> </td>
-            <td>
+              <td>
 
-              <input type="text" id="varietal" name="varietal" placeholder="Varietal" class="form-control" value="<%= wine_hash["varietal"] %>">
+                <input type="text" id="varietal" name="varietal" placeholder="Varietal" class="form-control" value="<%= wine_hash["varietal"] %>">
 
+              </td>
+              <td>
+                <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= wine_hash["price"] %>">
+              </td>
+              <td> <%= wine_hash["type"] %></td>
+
+              <td><a href="/mywineslist/new" class="btn btn-primary">Add</a></td>
             </td>
-            <td>
-              <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= wine_hash["price"] %>">
-            </td>
-            <td> <%= wine_hash["type"] %></td>
-            <td><a href="/mywineslist/new" class="btn btn-primary">Add</a></td>
-          </td>
-        </tr>
-        <% end %>
-      </table>
-    </div>
+          </tr>
 
-    <!--
-    <tr>
-    <td><img src ="<%= @image1 %>"</td>
-    <td><%= @winename1 %></td>
-    <td><%= @year1 %></td>
-    <td><%= @winery1 %></td>
-    <td><%= @varietal1 %></td>
-    <td><a href="/my_wines/new" class="btn btn-primary">Add</a></td>
-  </tr>
-</table>
+          <% end %>
+
+        </table>
+      </div>
+
+      <!--
+      <tr>
+      <td><img src ="<%= @image1 %>"</td>
+      <td><%= @winename1 %></td>
+      <td><%= @year1 %></td>
+      <td><%= @winery1 %></td>
+      <td><%= @varietal1 %></td>
+      <td><a href="/my_wines/new" class="btn btn-primary">Add</a></td>
+    </tr>
+  </table>
 </div> -->

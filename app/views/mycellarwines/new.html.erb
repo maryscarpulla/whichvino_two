@@ -1,6 +1,6 @@
 <!-- Validation failure messages -->
-<% if @mywineslist.errors.any? %>
-  <% @mywineslist.errors.full_messages.each do |message| %>
+<% if @mycellarwine.errors.any? %>
+  <% @mycellarwine.errors.full_messages.each do |message| %>
     <div class="alert alert-dismissable alert-danger">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <%= message %>
@@ -22,22 +22,22 @@
     <button>Search wines</button>
   </form>
 
-  <h3>Add a  Wine Manually</h3>
+  <h3>Add a Wine to My Cellar Manually</h3>
 </div>
 
 <div class="row">
   <div class="col-md-12">
-    <form action="/create_mywineslist" method="post">
+    <form action="/create_mycellarwine" method="post">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for winename -->
+      <!-- Label and input for wine_name -->
       <div class="form-group">
-        <label for="winename" class="control-label">
+        <label for="wine_name" class="control-label">
           Wine Name
         </label>
 
-        <input type="text" id="winename" name="winename" placeholder="Winename" class="form-control" value="<%= @mywineslist.winename %>">
+        <input type="text" id="wine_name" name="wine_name" placeholder="Wine name" class="form-control" value="<%= @mycellarwine.wine_name %>">
       </div>
 
       <!-- Label and input for year -->
@@ -46,7 +46,7 @@
           Year
         </label>
 
-        <input type="text" id="year" name="year" placeholder="Year" class="form-control" value="<%= @mywineslist.year %>">
+        <input type="text" id="year" name="year" placeholder="Year" class="form-control" value="<%= @mycellarwine.year %>">
       </div>
 
       <!-- Label and input for price -->
@@ -55,16 +55,16 @@
           Price
         </label>
 
-        <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @mywineslist.price %>">
+        <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @mycellarwine.price %>">
       </div>
 
-      <!-- Label and input for varietal -->
+      <!-- Label and input for varietal_id -->
       <div class="form-group">
-        <label for="varietal" class="control-label">
+        <label for="varietal_id" class="control-label">
           Varietal
         </label>
 
-        <input type="text" id="varietal" name="varietal" placeholder="Varietal" class="form-control" value="<%= @mywineslist.varietal %>">
+        <input type="text" id="varietal_id" name="varietal_id" placeholder="Varietal" class="form-control" value="<%= @mycellarwine.varietal_id %>">
       </div>
 
       <!-- Label and input for winery -->
@@ -73,31 +73,31 @@
           Winery
         </label>
 
-        <input type="text" id="winery" name="winery" placeholder="Winery" class="form-control" value="<%= @mywineslist.winery %>">
+        <input type="text" id="winery" name="winery" placeholder="Winery" class="form-control" value="<%= @mycellarwine.winery %>">
       </div>
 
-      <!-- Label and input for bucketlist -->
+      <!-- Label and input for bucket_list_wine -->
       <div class="checkbox">
-        <label for="bucketlist">
-          <input type="checkbox" id="bucketlist" name="bucketlist" value="1" <%= "checked" if @mywineslist.bucketlist %>>
-          Bucketlist
+        <label for="bucket_list_wine">
+          <input type="checkbox" id="bucket_list_wine" name="bucket_list_wine" value="1" <%= "checked" if @mycellarwine.bucket_list_wine %>>
+          Bucket list wine
         </label>
       </div>
 
-      <!-- Label and input for image_id -->
       <div class="form-group">
         <label for="image_id" class="control-label">
           Image
         </label>
 
-        <input type="text" id="image_id" name="image_id" placeholder="Image" class="form-control" value="<%= @mywineslist.image_id %>">
+        <input type="text" id="image_id" name="image_id" placeholder="Image" class="form-control" value="<%= @mycellarwine.image_id %>">
       </div>
 
+
       <button class="btn btn-success">
-        Create Wine
+        Create a New Wine
       </button>
       or
-      <a href="/mywineslist">Cancel</a>
+      <a href="/mycellarwines">Cancel</a>
     </form>
   </div>
 </div>
